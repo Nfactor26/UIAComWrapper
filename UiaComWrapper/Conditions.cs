@@ -5,11 +5,9 @@
 
 
 
-using System;
-using System.Globalization;
-using System.Windows;
 using System.Diagnostics;
 using UIAComWrapperInternal;
+using UIAutomationClient = Interop.UIAutomationClient;
 
 namespace System.Windows.Automation
 {

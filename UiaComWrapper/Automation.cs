@@ -4,9 +4,8 @@
 // All other rights reserved.
 
 
-using System;
 using UIAComWrapperInternal;
-using UIAutomationClient;
+using UIAutomationClient = Interop.UIAutomationClient;
 
 namespace System.Windows.Automation
 {
@@ -33,7 +32,7 @@ namespace System.Windows.Automation
                 {
                     try
                     {
-                        factory = new CUIAutomation8();
+                        factory = new UIAutomationClient.CUIAutomation8();
                     }
                     catch (System.Runtime.InteropServices.COMException)
                     {
@@ -43,7 +42,7 @@ namespace System.Windows.Automation
                 // Fall back to CUIAutomation
                 if (factory == null)
                 {
-                    factory = new CUIAutomation();
+                    factory = new UIAutomationClient.CUIAutomation();
                 }
 
                 return factory;

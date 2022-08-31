@@ -114,8 +114,7 @@ namespace UIAComWrapperTests
         }
 
         [Test]
-        [Ignore] 
-        // Test is not working on Windows 8 due to the Start Button being removed
+        [Ignore("Test is not working on Windows 8 due to the Start Button being removed")] 
         public void TestInvokeEvent()
         {
             AutomationElement startButton = AutomationElementTest.GetStartButton();

@@ -2,7 +2,8 @@ using System;
 using System.Windows.Automation;
 using System.Windows.Automation.Providers;
 using NUnit.Framework;
-using UIAutomationClient;
+using Interop.UIAutomationClient;
+using UIAutomationClient = Interop.UIAutomationClient;
 using SupportedTextSelection = System.Windows.Automation.SupportedTextSelection;
 using ZoomUnit = System.Windows.Automation.ZoomUnit;
 

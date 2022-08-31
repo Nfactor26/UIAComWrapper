@@ -9,9 +9,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Windows.Automation.Providers;
 using UIAComWrapperInternal;
-using UIAutomationClient;
+using UIAutomationClient = Interop.UIAutomationClient;
 
 namespace System.Windows.Automation
 {
@@ -28,7 +27,7 @@ namespace System.Windows.Automation
     // In the original API, this was a System.Windows.Automation.Providers type.
     // But I cannot pass anything but a UIAutomationClient type into 
     // the COM API's return parameter.
-    public delegate IRawElementProviderSimple ClientSideProviderFactoryCallback(IntPtr hwnd, int idChild, int idObject);
+    public delegate UIAutomationClient.IRawElementProviderSimple ClientSideProviderFactoryCallback(IntPtr hwnd, int idChild, int idObject);
 
     [StructLayout(LayoutKind.Sequential)]
     public struct ClientSideProviderDescription
@@ -103,9 +102,9 @@ namespace System.Windows.Automation
 
         #region IUIAutomationProxyFactory Members
 
-        IRawElementProviderSimple UIAutomationClient.IUIAutomationProxyFactory.CreateProvider(IntPtr hwnd, int idObject, int idChild)
+        UIAutomationClient.IRawElementProviderSimple UIAutomationClient.IUIAutomationProxyFactory.CreateProvider(IntPtr hwnd, int idObject, int idChild)
         {
-            IRawElementProviderSimple provider = _callback(hwnd, idChild, idObject);
+            UIAutomationClient.IRawElementProviderSimple provider = _callback(hwnd, idChild, idObject);
             return provider;
         }
 

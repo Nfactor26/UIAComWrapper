@@ -5,11 +5,10 @@
 
 
 
+using Interop.UIAutomationClient;
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using System.Windows.Automation.Providers;
-using UIAutomationClient;
 
 namespace UIAComWrapperInternal
 {

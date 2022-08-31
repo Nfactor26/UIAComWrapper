@@ -4,15 +4,10 @@
 // All other rights reserved.
 
 
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Resources;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
-using UIAComWrapper;
 using UIAComWrapperInternal;
 
 namespace System.Windows.Automation
@@ -783,7 +778,7 @@ namespace System.Windows.Automation
         
         public string LocalizedControlType
         {
-            get { return StringTable.ResourceManager.GetString(ProgrammaticName.Replace(".", string.Empty)); }
+            get { return UIAComWrapper.StringTable.ResourceManager.GetString(ProgrammaticName.Replace(".", string.Empty)); }
         }
     }
 

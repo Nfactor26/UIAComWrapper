@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Automation;
-using UIAutomationClient;
+using UIAutomationClient = Interop.UIAutomationClient;
 using StructureChangeType = System.Windows.Automation.StructureChangeType;
 
 namespace UIAComWrapperInternal
@@ -155,7 +155,7 @@ namespace UIAComWrapperInternal
             this._structureChangeHandler = handler;
         }
 
-        public void HandleStructureChangedEvent(IUIAutomationElement sender, UIAutomationClient.StructureChangeType changeType, int[] runtimeId)
+        public void HandleStructureChangedEvent(UIAutomationClient.IUIAutomationElement sender, UIAutomationClient.StructureChangeType changeType, int[] runtimeId)
         {
             StructureChangedEventArgs args = new StructureChangedEventArgs(
                 (StructureChangeType)changeType,

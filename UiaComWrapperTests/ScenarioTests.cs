@@ -156,7 +156,7 @@ namespace UIAComWrapperTests
         }
 
         [Test]
-        [Ignore]
+        [Ignore("")]
         public void TextPatternTest()
         {
             System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
@@ -508,18 +508,18 @@ namespace UIAComWrapperTests
             Assert.IsNotNull(obj);
             Accessibility.IAccessible accessible = (Accessibility.IAccessible)obj;
             Assert.IsNotNull(accessible);
-            Assert.AreEqual(0x3D /* clock */, accessible.get_accRole(0));
+            Assert.AreEqual(0x2B /* clock */, accessible.get_accRole(0));
 
             // Convert to an element
             AutomationElement element = AutomationElement.FromIAccessible(accessible, 0);
             Assert.IsNotNull(element);
-            Assert.AreEqual(ControlType.Pane, element.Current.ControlType);
+            Assert.AreEqual(ControlType.Button, element.Current.ControlType);
 
             // Round-trip: let's get the IAccessible back out
             LegacyIAccessiblePattern legacy = (LegacyIAccessiblePattern)element.GetCurrentPattern(LegacyIAccessiblePattern.Pattern);
             Accessibility.IAccessible legacyIAcc = legacy.GetIAccessible();
             Assert.IsNotNull(legacyIAcc);
-            Assert.AreEqual(0x3D /* clock */, legacyIAcc.get_accRole(0));
+            Assert.AreEqual(0x2B /* clock */, legacyIAcc.get_accRole(0));
         }
 
     }

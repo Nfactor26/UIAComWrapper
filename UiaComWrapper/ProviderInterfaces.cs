@@ -4,13 +4,11 @@
 // All other rights reserved.
 
 
-using System;
-using System.Runtime.InteropServices;
-using UIAComWrapperInternal;
 // Provider interfaces.
 // IRawElementProviderSimple is defined in the interop DLL,
 // since the Client code refers to it.  Everything else is here.
-using UIAutomationClient;
+using Interop.UIAutomationClient;
+using System.Runtime.InteropServices;
 using TextPatternRangeEndpoint = System.Windows.Automation.Text.TextPatternRangeEndpoint;
 using TextUnit = System.Windows.Automation.Text.TextUnit;
 
